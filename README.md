@@ -1,1 +1,0 @@
-# sdk-bsp-stm32f103-unkonwn-bluepill

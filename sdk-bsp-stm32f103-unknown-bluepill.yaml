@@ -7,7 +7,7 @@ board:
   description_zh: 蓝色药丸开发板是一个搭载 STM32F103C8 芯片的最小系统板
   emulator_machine: ''
   large_image: 'documents/images/board-large.jpg'
-  name: STM32F103-BLUEPILL
+  name: STM32F103-UNKNOWN-BLUEPILL
   price_cn: 11.00 CNY
   price_global: 6.00 USD
   sale_contact_cn: ''

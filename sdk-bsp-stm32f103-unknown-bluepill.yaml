@@ -41,7 +41,7 @@ features_zh:
 - SRAM:20K
 - FLASH:64K
 pkg_type: Board_Support_Packages
-pkg_vendor: RealThead
+pkg_vendor: RealThread
 pkg_version: 0.1.0
 template_projects:
 - builtin_files:
@@ -50,7 +50,6 @@ template_projects:
     - .cproject
     - .gitignore
     - .project
-    - .sconsign.dblite
     - .settings
     - makefile.targets
     - applications

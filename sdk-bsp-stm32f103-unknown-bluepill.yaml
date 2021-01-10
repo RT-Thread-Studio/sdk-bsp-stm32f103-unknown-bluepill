@@ -1,10 +1,10 @@
 board:
   buy_url_cn: 'https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4002-21223910208.22.23696a4byUcXPI&id=531633085101'
-  buy_url_global: 'https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4002-21223910208.22.23696a4byUcXPI&id=531633085101'
+  buy_url_global: 'https://www.amazon.com/s?k=stm32+blue+pill'
   debug_interface: SWD
   debugger: ST-LINK
   description_en: Bluepill development board is a minimum system board equipped with STM32F103C8 chip
-  description_zh: 蓝色药丸开发板是一个搭载 STM32F103C8 芯片的最小系统板
+  description_zh: Bluepill 开发板是一个搭载 STM32F103C8 芯片的最小系统板
   emulator_machine: ''
   large_image: 'documents/images/board-large.jpg'
   name: STM32F103-UNKNOWN-BLUEPILL
@@ -44,6 +44,48 @@ pkg_type: Board_Support_Packages
 pkg_vendor: RealThread
 pkg_version: 0.1.0
 template_projects:
+- builtin_files:
+  - files_and_folders:
+    - .config
+    - .cproject
+    - .gitignore
+    - .project
+    - .settings
+    - makefile.targets
+    - applications
+    - board
+    - figures
+    - cconfig.h
+    - Kconfig
+    - libraries
+    - README.md
+    - rtconfig.h
+    - rtconfig.py
+    - rtconfig_preinc.h
+    - SConscript
+    - SConstruct
+    source_path_offset: rtt_default_project_0
+    target_path_offset: ''
+  external_files:
+  - files_and_folders:
+    - components
+    - include
+    - libcpu/arm
+    - libcpu/Kconfig
+    - libcpu/SConscript
+    - src
+    - tools
+    - Kconfig
+    - LICENSE
+    package_name: RT-Thread
+    package_type: RT-Thread_Source_Code
+    package_vendor: ''
+    package_version: latest
+    source_path_offset: rt-thread
+    target_path_offset: rt-thread
+  project_description: ''
+  project_name: ''
+  project_type: rt-thread|@full|@latest
 - builtin_files:
   - files_and_folders:
     - .config

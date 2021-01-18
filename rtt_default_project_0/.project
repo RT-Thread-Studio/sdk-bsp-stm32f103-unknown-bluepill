@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-  <name>sdk-bsp-stm32f103-mini-system</name>
+  <name>sdk-bsp-stm32f103-unknown-bluepill</name>
   <comment />
   <projects>
 	</projects>

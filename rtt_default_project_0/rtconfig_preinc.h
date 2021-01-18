@@ -6,8 +6,8 @@
 /* RT-Thread pre-include file */
 
 #define HAVE_CCONFIG_H
-#define RT_USING_MINILIBC
 #define STM32F103xB
 #define USE_HAL_DRIVER
+#define __RTTHREAD__
 
 #endif /*RTCONFIG_PREINC_H__*/

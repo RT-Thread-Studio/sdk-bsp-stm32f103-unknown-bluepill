@@ -225,7 +225,7 @@ This BSP only enables GPIO and USART1 by default. If you need more advanced feat
 
 
 
-**Step 3: Select VC (virtual console) software package.**
+**Step 3: Select vconsole (virtual console) software package.**
 
 ![vconsole](figures\vconsole.png)
 

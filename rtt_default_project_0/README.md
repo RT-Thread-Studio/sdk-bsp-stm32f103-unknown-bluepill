@@ -81,7 +81,7 @@ KEY FEATURES
 - Debug IO interface type: ST-LINK V2 (SWD)
 
 
-![Bluepill_pinout](figures\Bluepill_pinout.png)
+![Bluepill_pinout](figures/Bluepill_pinout.png)
 
 
 
@@ -102,11 +102,11 @@ ST-LINK driver:
 |      VCC3.3      |       VCC3.3        |
 |       GND        |         GND         |
 
-![connecter1](figures\connecter1.jpeg)
+![connecter1](figures/connecter1.jpeg)
 
-![connecter2](figures\connecter2.png)
+![connecter2](figures/connecter2.png)
 
-![connecter3](figures\connecter3.jpeg)
+![connecter3](figures/connecter3.jpeg)
 
 
 
@@ -128,7 +128,7 @@ You can use other USB to UART adapters to replace FTDI adapter.
 
 
 
-![connection](figures\connection.jpg)
+![connection](figures/connection.jpg)
 
 
 
@@ -139,7 +139,7 @@ You can use other USB to UART adapters to replace FTDI adapter.
 | BOOT0 |     0      |
 | BOOT1 |     0      |
 
-![jumper](figures\jumper.jpg)
+![jumper](figures/jumper.jpg)
 
 
 
@@ -151,21 +151,21 @@ You can use other USB to UART adapters to replace FTDI adapter.
 - Select and install STM32F1 Chip Support Package.
 - Select and install STM32F103 Blue Pill Board Support Package(BSP).
 
-![jumper](figures\SDK1.png)
+![jumper](figures/SDK1.png)
 
-![jumper](figures\SDK2.png)
+![jumper](figures/SDK2.png)
 
 
 
 **Step2: Right click the "Project Explorer".**
 
-![create1](figures\create1.png)
+![create1](figures/create1.png)
 
 
 
 **Step3: Select "RT-Thread Project" and "Next"**
 
-![create2](figures\create2.png)
+![create2](figures/create2.png)
 
 **Step4:**
 
@@ -175,13 +175,13 @@ You can use other USB to UART adapters to replace FTDI adapter.
 - Select "ST-LINK" debugger.
 - Finish.
 
-![create3](figures\create3.png)
+![create3](figures/create3.png)
 
 
 
 **Step5: Compile the project and download the program**
 
-![create4](figures\create4.png)
+![create4](figures/create4.png)
 
 
 
@@ -189,7 +189,7 @@ You can use other USB to UART adapters to replace FTDI adapter.
 
 After the program is successfully downloaded, the system runs automatically. Observe the running results of the LED on the development board, and you will see the LED is flashing periodically.
 
-<img src="figures\terminal.png" alt="terminal" style="zoom:80%;" />
+<img src="figures/terminal.png" alt="terminal" style="zoom:80%;" />
 
 The COM port connects to **USART1 (PA9-Tx, PA10-Rx) by default**, and when the corresponding serial port (**115200**-8-1-N) is opened in the terminal tool, the output information of RT-Thread can be seen when the device is reset:
 
@@ -207,7 +207,7 @@ msh >
 
 This BSP only enables GPIO and USART1 by default. If you need more advanced features such as SPI, ADC, or to add software packages, you need to configure the BSP with **RT-Thread Settings**.
 
-<img src="figures\settings.png" alt="settings" style="zoom: 67%;" />
+<img src="figures/settings.png" alt="settings" style="zoom: 67%;" />
 
 
 
@@ -215,19 +215,19 @@ This BSP only enables GPIO and USART1 by default. If you need more advanced feat
 
 **Step 1: Enable USB device.**
 
-<img src="figures\usb1.png" alt="usb1"  />
+<img src="figures/usb1.png" alt="usb1"  />
 
 
 
 **Step 2: Enable USB Device Driver and enable to use device as CDC device.**
 
-![usb2](figures\usb2.png)
+![usb2](figures/usb2.png)
 
 
 
 **Step 3: Select vconsole (virtual console) software package.**
 
-![vconsole](figures\vconsole.png)
+![vconsole](figures/vconsole.png)
 
 
 
@@ -240,7 +240,7 @@ rt_device_t dev = rt_device_find("vcom");
 vconsole_switch(dev);
 ```
 
-![usbcodes](figures\usbcodes.png)
+![usbcodes](figures/usbcodes.png)
 
 
 

@@ -148,8 +148,8 @@ You can use other USB to UART adapters to replace FTDI adapter.
 **Step1: Install packages.**
 
 - Select and install RT-Thread latest version package (Don't forget to click 'Update').
-- Select and install STM32F1 chip support package.
-- Select and install STM32F103 Blue Pill Board BSP package .
+- Select and install STM32F1 Chip Support Package.
+- Select and install STM32F103 Blue Pill Board Support Package(BSP).
 
 ![jumper](figures\SDK1.png)
 
@@ -157,7 +157,7 @@ You can use other USB to UART adapters to replace FTDI adapter.
 
 
 
-**Step2: Right click the "Project Explorer" area.**
+**Step2: Right click the "Project Explorer".**
 
 ![create1](figures\create1.png)
 
@@ -169,7 +169,7 @@ You can use other USB to UART adapters to replace FTDI adapter.
 
 **Step4:**
 
-- Give your project a name.
+- Name your project.
 - Select "Base on Board".
 - Select "STM32F103-UNKNOWN-BLUEPILL" Board.
 - Select "ST-LINK" debugger.

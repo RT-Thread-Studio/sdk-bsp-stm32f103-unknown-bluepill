@@ -203,7 +203,7 @@ msh >
 
 
 
-### 3.6 **Peripheral Condition**
+### 3.6 Peripheral Condition
 
 Each peripheral supporting condition for this BSP is as follows:
 

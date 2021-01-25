@@ -17,10 +17,10 @@ By reading the ***Quickly Get Started*** section developers can quickly get thei
 
 ## 1 MCU Resources
 
-The STM32F103xx medium-density performance line family incorporates the high-performance ARM®Cortex®-M3 32-bit RISC core operating at a 72 MHz frequency, high-speed embedded memories (Flash memory up to 128 Kbytes and SRAM up to 20 Kbytes), and an extensive range of enhanced I/Os and peripherals connected to two APB buses. All devices offer two 12-bit ADCs, three general purpose 16-bit timers plus one PWM timer, as well as standard and advanced communication interfaces: up to two I2Cs and SPIs, three USARTs, an USB and a CAN.
+The STM32F103Cx medium-density performance line family incorporates the high-performance ARM®Cortex®-M3 32-bit RISC core operating at a 72 MHz frequency, high-speed embedded memories (Flash memory up to 128 Kbytes and SRAM up to 20 Kbytes), and an extensive range of enhanced I/Os and peripherals connected to two APB buses. All devices offer two 12-bit ADCs, three general purpose 16-bit timers plus one PWM timer, as well as standard and advanced communication interfaces: up to two I2Cs and SPIs, three USARTs, an USB and a CAN.
 
 The devices operate from a 2.0 to 3.6 V power supply. They are available in both the –40 to +85 °C temperature range and the –40 to +105 °C extended temperature range. A comprehensive set of power-saving mode allows the design of low-power applications.
-The STM32F103xx medium-density performance line family includes devices in six different package types: from 36 pins to 100 pins. Depending on the device chosen, different sets of peripherals are included, the description below gives an overview of the complete range of peripherals proposed in this family.
+The STM32F103Cx medium-density performance line family includes devices in six different package types: from 36 pins to 100 pins. Depending on the device chosen, different sets of peripherals are included, the description below gives an overview of the complete range of peripherals proposed in this family.
 These features make the STM32F103xx medium-density performance line microcontroller family suitable for a wide range of applications such as motor drives, application control, medical and handheld equipment, PC and gaming peripherals, GPS platforms, industrial applications, PLCs, inverters, printers, scanners, alarm systems, video intercoms, and HVACs.
 
 KEY FEATURES
@@ -179,7 +179,7 @@ You can use other USB to UART adapters to replace FTDI adapter.
 
 
 
-**Step5: Compile the project and download the program**
+**Step5: Compile(1) the project and download(2) the program**
 
 ![create4](figures/create4.png)
 
@@ -200,6 +200,29 @@ The COM port connects to **USART1 (PA9-Tx, PA10-Rx) by default**, and when the c
  2006 - 2018 Copyright by rt-thread team
 msh >
 ```
+
+
+
+### 3.6 **Peripheral Condition**
+
+Each peripheral supporting condition for this BSP is as follows:
+
+| **On-board Peripherals** | **Support** | **Remark**                                                   |
+| ------------------------ | ----------- | ------------------------------------------------------------ |
+| LED                      | √           | PC13                                                         |
+| USB Virtual Serial Port  | √           | USB CDC                                                      |
+| **On-chip Peripherals**  | **Support** | **Remark**                                                   |
+| GPIO                     | √           |                                                              |
+| UART                     | √           | USART1 / USART2                                              |
+| SPI                      | √           | SPI1                                                         |
+| I2C                      | √           | software simulate                                            |
+| USB                      | √           | USB Device                                                   |
+| ADC                      |             |                                                              |
+| RTC                      | √           | Support for external crystal oscillator and internal low-speed clocks |
+| PWM                      |             |                                                              |
+| FLASH                    |             |                                                              |
+| IWG                      |             |                                                              |
+| UID                      | √           | STM32 Unique Device Identifier                               |
 
 
 
@@ -247,6 +270,12 @@ vconsole_switch(dev);
 **Step 5: Download the new program to your blue pill board.** 
 
 Re-plug the USB cable and you will find a new serial (virtual com, 115200, 8-N-1) device in your computer. Then, you can use the USB instead of the UART-USB adapter as a console and send commands through USB cable. If you reset or reboot the blue pill board, you'll still need to re-plug the USB cable. 
+
+
+
+### 4.2 How to extend Blue Pill board’s Flash space
+
+According to ST official datasheet, STM32F103C8 has 64KB of Flash. However, STM32F103C8 and STM32F103CB use the same type of silicon die, which means STM32F103C8 also has 128KB ROM in theory, but ST locked the high 64KB. Basically, to force the debugger to download program can unlock the high 64KB. There is a good news that **RT-Studio will help you to unlock the Blue Pill Board high 64KB block** if you use Blue Pill Board BSP as a template to create your project. You just need to press the "Flash Download" button as usual. What you only need to remember is that Blue Pill board has 128KB of Flash rather than 64KB.
 
 
 

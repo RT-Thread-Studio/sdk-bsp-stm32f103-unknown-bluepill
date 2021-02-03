@@ -1,6 +1,6 @@
 board:
   buy_url_cn: 'https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4002-21223910208.22.23696a4byUcXPI&id=531633085101'
-  buy_url_global: 'https://www.amazon.com/s?k=stm32+blue+pill'
+  buy_url_global: ''
   debug_interface: SWD
   debugger: ST-LINK
   description_en: Bluepill development board is a minimum system board equipped with STM32F103C8 chip
@@ -34,6 +34,9 @@ docs:
 - category: manual
   file: documents/manuals/README.pdf
   title: Bluepill Manual
+- category: manual
+  file: documents/manuals/Beginning STM32 (excerpt).pdf
+  title: Beginning STM32 (excerpt)
 example_projects: []
 features:
 - MCU:STM32F103C8T6
@@ -49,7 +52,7 @@ features_zh:
 - 调试接口：SWD 调试接口
 pkg_type: Board_Support_Packages
 pkg_vendor: RealThread
-pkg_version: 1.2.0
+pkg_version: 1.3.0
 template_projects:
 - builtin_files:
   - files_and_folders:

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2006-2018, RT-Thread Development Team
+ * Copyright (c) 2006-2023, RT-Thread Development Team
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -19,7 +19,7 @@
 #if !defined(BSP_USING_PULSE_ENCODER1) && !defined(BSP_USING_PULSE_ENCODER2) && !defined(BSP_USING_PULSE_ENCODER3) \
     && !defined(BSP_USING_PULSE_ENCODER4) && !defined(BSP_USING_PULSE_ENCODER5) && !defined(BSP_USING_PULSE_ENCODER6)
     #error "Please define at least one BSP_USING_PULSE_ENCODERx"
-    /* this driver can be disabled at menuconfig → RT-Thread Components → Device Drivers */
+    /* this driver can be disabled at menuconfig -> RT-Thread Components -> Device Drivers */
 #endif
 
 #define AUTO_RELOAD_VALUE 0x7FFF
@@ -143,7 +143,7 @@ rt_int32_t pulse_encoder_get_count(struct rt_pulse_encoder_device *pulse_encoder
 {
     struct stm32_pulse_encoder_device *stm32_device;
     stm32_device = (struct stm32_pulse_encoder_device*)pulse_encoder;
-    return (rt_int32_t)((rt_int16_t)__HAL_TIM_GET_COUNTER(&stm32_device->tim_handler) + stm32_device->over_under_flowcount * AUTO_RELOAD_VALUE);
+    return (rt_int32_t)((rt_int16_t)__HAL_TIM_GET_COUNTER(&stm32_device->tim_handler) + stm32_device->over_under_flowcount * (AUTO_RELOAD_VALUE + 1));
 }
 
 rt_err_t pulse_encoder_control(struct rt_pulse_encoder_device *pulse_encoder, rt_uint32_t cmd, void *args)
@@ -157,10 +157,12 @@ rt_err_t pulse_encoder_control(struct rt_pulse_encoder_device *pulse_encoder, rt
     switch (cmd)
     {
     case PULSE_ENCODER_CMD_ENABLE:
+        __HAL_TIM_ENABLE_IT(&stm32_device->tim_handler, TIM_IT_UPDATE);
         HAL_TIM_Encoder_Start(&stm32_device->tim_handler, TIM_CHANNEL_ALL);
         HAL_TIM_Encoder_Start_IT(&stm32_device->tim_handler, TIM_CHANNEL_ALL);
         break;
     case PULSE_ENCODER_CMD_DISABLE:
+        __HAL_TIM_DISABLE_IT(&stm32_device->tim_handler, TIM_IT_UPDATE);
         HAL_TIM_Encoder_Stop(&stm32_device->tim_handler, TIM_CHANNEL_ALL);
         HAL_TIM_Encoder_Stop_IT(&stm32_device->tim_handler, TIM_CHANNEL_ALL);
         break;

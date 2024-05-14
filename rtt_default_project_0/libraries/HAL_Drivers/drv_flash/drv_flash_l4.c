@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2006-2018, RT-Thread Development Team
+ * Copyright (c) 2006-2023, RT-Thread Development Team
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -8,13 +8,15 @@
  * 2018-12-5      SummerGift   first version
  */
 
-#include "board.h"
+#include <rtconfig.h>
+#include <rtdef.h>
 
 #ifdef BSP_USING_ON_CHIP_FLASH
 #include "drv_config.h"
 #include "drv_flash.h"
+#include <board.h>
 
-#if defined(PKG_USING_FAL)
+#if defined(RT_USING_FAL)
 #include "fal.h"
 #endif
 
@@ -233,7 +235,7 @@ int stm32_flash_erase(rt_uint32_t addr, size_t size)
     HAL_FLASH_Unlock();
 
     /* Clear OPTVERR bit set on virgin samples */
-    __HAL_FLASH_CLEAR_FLAG(FLASH_FLAG_OPTVERR);
+    __HAL_FLASH_CLEAR_FLAG(FLASH_FLAG_OPTVERR | FLASH_FLAG_PGSERR);
     /* Get the 1st page to erase */
     FirstPage = GetPage(addr);
     /* Get the number of pages to erase from 1st page */
@@ -264,7 +266,7 @@ __exit:
     return size;
 }
 
-#if defined(PKG_USING_FAL)
+#if defined(RT_USING_FAL)
 
 static int fal_flash_read(long offset, rt_uint8_t *buf, size_t size);
 static int fal_flash_write(long offset, const rt_uint8_t *buf, size_t size);

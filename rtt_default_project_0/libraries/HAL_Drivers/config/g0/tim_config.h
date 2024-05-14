@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2006-2018, RT-Thread Development Team
+ * Copyright (c) 2006-2023, RT-Thread Development Team
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -41,12 +41,21 @@ extern "C" {
 
 #ifdef BSP_USING_TIM3
 #ifndef TIM3_CONFIG
+#if defined(STM32G0B0xx) || defined(STM32G0B1xx) || defined(STM32G0C1xx)
+#define TIM3_CONFIG                             \
+    {                                           \
+       .tim_handle.Instance     = TIM3,         \
+       .tim_irqn                = TIM3_TIM4_IRQn, \
+       .name                    = "timer3",     \
+    }
+#else
 #define TIM3_CONFIG                             \
     {                                           \
        .tim_handle.Instance     = TIM3,         \
        .tim_irqn                = TIM3_IRQn,    \
        .name                    = "timer3",     \
     }
+#endif /* defined(STM32G0B0xx) || defined(STM32G0B1xx) || defined(STM32G0C1xx) */
 #endif /* TIM3_CONFIG */
 #endif /* BSP_USING_TIM3 */
 

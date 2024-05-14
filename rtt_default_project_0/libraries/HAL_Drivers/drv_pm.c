@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2006-2018, RT-Thread Development Team
+ * Copyright (c) 2006-2023, RT-Thread Development Team
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -10,6 +10,7 @@
 
 #include <board.h>
 #include <drv_lptim.h>
+#include <rtdevice.h>
 
 static void uart_console_reconfig(void)
 {

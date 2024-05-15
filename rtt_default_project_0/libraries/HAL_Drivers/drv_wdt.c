@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2006-2018, RT-Thread Development Team
+ * Copyright (c) 2006-2023, RT-Thread Development Team
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -108,8 +108,8 @@ int rt_wdt_init(void)
     stm32_wdt.hiwdg.Init.Prescaler = IWDG_PRESCALER_256;
 
     stm32_wdt.hiwdg.Init.Reload = 0x00000FFF;
-#if defined(SOC_SERIES_STM32F0) || defined(SOC_SERIES_STM32L4) || defined(SOC_SERIES_STM32F7) \
-    || defined(SOC_SERIES_STM32H7)
+#if defined(SOC_SERIES_STM32F0) || defined(SOC_SERIES_STM32G4)|| defined(SOC_SERIES_STM32L4) || defined(SOC_SERIES_STM32F7) \
+    || defined(SOC_SERIES_STM32H7) || defined(SOC_SERIES_STM32L0) || defined(SOC_SERIES_STM32G0)
     stm32_wdt.hiwdg.Init.Window = 0x00000FFF;
 #endif
     stm32_wdt.is_start = 0;

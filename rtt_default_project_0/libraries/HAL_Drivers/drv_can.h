@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2006-2018, RT-Thread Development Team
+ * Copyright (c) 2006-2023, RT-Thread Development Team
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -21,7 +21,6 @@ extern "C" {
 
 #include <board.h>
 #include <rtdevice.h>
-#include <rtthread.h>
 
 #define BS1SHIFT        16
 #define BS2SHIFT        20
